@@ -21,9 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-primary flex justify-center md:px-20 sm:px-10 h-screen`}>
-        <div className="lg:flex border-4 border-sky-500 max-w-[1300px] min-h-screen">
-          {children}
-          {details}
+        <div className="lg:flex w-full max-w-[1300px] min-h-screen">
+          <div className="fixed w-[40%] h-[95%]">
+            {children}
+          </div>
+          <div>
+            {details}
+          </div>
         </div>
       </body>
     </html>

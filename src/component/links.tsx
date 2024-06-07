@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Links(){
     return (
         <div className="w-1/2">
-            <div className='flex justify-between text-paragraph text-2xl w-3/5'>
+            <div className='flex justify-between text-paragraph text-2xl'>
                 <a href="https://github.com/blncmusa">
                     <p>
                         <FontAwesomeIcon icon={faSquareGithub}/>

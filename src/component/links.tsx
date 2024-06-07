@@ -9,8 +9,8 @@ export default function Links(){
                     <p>
                         <FontAwesomeIcon icon={faSquareGithub}/>
                     </p>
-                </a>f
-                <a><FontAwesomeIcon icon={faLinkedin} className="cursor-pointer hover:text-red-500"/></a>
+                </a>
+                <a><FontAwesomeIcon icon={faLinkedin} className="text-green-500"/></a>
                 <a><FontAwesomeIcon icon={faGoodreads} className="cursor-pointer"/></a>
                 <a><FontAwesomeIcon icon={faCode} className="cursor-pointer"/></a>
                 <a><FontAwesomeIcon icon={faPlaystation} className="cursor-pointer"/></a>

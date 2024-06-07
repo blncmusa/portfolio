@@ -20,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-primary flex justify-center md:px-20 sm:px-10 h-screen`}>
-        <div className="lg:flex w-full max-w-[1300px] min-h-screen">
-          <div className="fixed w-[40%] h-[95%]">
+      <body className={`${inter.className} bg-primary flex justify-center md:px-20 sm:px-20 px-20 h-screen min-w-[150px]`}>
+        <div className="lg:flex w-full max-w-[1300px] min-h-screen flex flex-col">
+          <div className="lg:fixed lg:w-[40%] lg:h-[95%]">
             {children}
           </div>
           <div>

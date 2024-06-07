@@ -1,6 +1,6 @@
 export default function PersonalInfo(){
     return (
-        <div className="lg:w-1/2 my-[100px] ml-[50%]">
+        <div className="lg:w-1/2 lg:my-[100px] lg:ml-[50%]">
             <h1 className="text-white lg:hidden uppercase my-10">About</h1>
             <div className="flex flex-col text-paragraph font-light gap-4 text-sm/[25px]">
             <p>Back in 2015, I embarked on a journey to explore the world of languages and stumbled upon the fascinating realm of coding. What started as a curiosity soon turned into a passion, leading me to develop my first app: an NHL tracker that provided real-time scores and stats for hockey enthusiasts.</p>

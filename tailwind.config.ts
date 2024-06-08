@@ -5,7 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/@details/**/*.{js,ts,jsx,tsx,mdx}", 
+    "./src/admin/**/*.{js,ts,jsx,tsx,mdx}", 
   ],
   theme: {
     extend: {
@@ -15,7 +15,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#0A1821",
+        primary: {
+          100: "#102635",
+          200: "#0A1821",
+        },
         paragraph: "#8e9fb9",
         title: "#e2e8f0"
       }

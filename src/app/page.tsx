@@ -1,22 +1,19 @@
-import Links from "@/component/links"
+import Links from "@/components/links"
 import Link from "next/link"
+import Details from "./details"
+import Titles from "../components/titles"
 
 export default function Home(){
   return (
-    <>
-    <div className="flex flex-col lg:min-h-40 lg:h-4/5 h-[200px] justify-between mt-[100px] box-border">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-6xl text-title font-bold cursor-pointer hover:text-yellow-500">Mustafa</h1>
-        <p className="text-title text-xl">Software Engineer</p>
-        <p className="text-paragraph font-extralight">React | React Native</p>
+    <div className="flex justify-center md:px-20 sm:px-20 px-20 h-screen min-w-[150px]">
+      <div className="lg:flex w-full max-w-[1300px] min-h-screen flex flex-col">
+            <div className="lg:fixed lg:w-[40%] lg:h-[95%]">
+              <Titles/>
+            </div>
+            <div>
+              <Details/>
+            </div>
       </div>
-        <div className="lg:hidden min-w-[200px] max-w-[30%]">
-          <Links />
-        </div>
-        <div className="lg:block md:hidden text-[22px] hidden w-1/2">
-          <Links/>
-        </div>
     </div>
-    </>
   )
 }

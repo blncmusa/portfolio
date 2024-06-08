@@ -10,11 +10,13 @@ export default function Account(){
 
     return (
         <>
-            <div className="h-screen w-screen flex justify-center items-center">
+            <nav className="w-screen h-[10%] bg-primary-100 flex justify-evenly py-4">
+                <a href="/" className="p-2 bg-green-100 rounded-md px-4">Home</a>
                 <button onClick={handleLogout} className="p-2 bg-green-100 rounded-md px-4">
-                    <p>Sign Out</p>
+                        <p>Sign Out</p>
                 </button>
-            </div>
+                
+            </nav>
         </>
     )
 }

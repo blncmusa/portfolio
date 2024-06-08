@@ -1,40 +1,24 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 import React from "react"
+import { login } from "@/pages/api/login";
 
 export default function LoginPage() {
 
-    const [email, setEmail] = React.useState('')
-    const [password, setPassword] = React.useState('')
-    const [error, setError] = React.useState('')
-    const router = useRouter()
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [error, setError] = React.useState('');
 
-    const handleLogin = async () => {
+    const handleLogin = () => {
         if(email && password) {
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, password })
-                })
-
-                if (response.ok){
-                    router.push('/account')
-                }
-
-            } catch (error) {
-                console.error("Login error: ", error)
-                setError("An error occurred. Please try again!")
-            }
-        } else {
-            setError("Please fill in all fields")
+            const formData = new FormData();
+            console.log(email, password, "email and password sent")
+            formData.append('email', email);
+            formData.append('password', password);
+            login(formData);
         }
     }
-    
+   
     return (
     <div className="lg:flex md:flex sm:flex h-screen w-screen justify-center items-center border-4 hidden focus:outline-none">
         <div className="min-w-[350px] bg-primary-100 min-h-[55%] rounded-md flex justify-center flex-col focus:outline-none">

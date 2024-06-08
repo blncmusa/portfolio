@@ -1,24 +1,25 @@
 'use server'
 
-import { createClient } from '@/utils/supabase/server'
-import { NextApiRequest, NextApiResponse } from 'next'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-export default async function login(req: NextApiRequest, res: NextApiResponse) {
-  const supabase = createClient()
+import { createClient } from '@/utils/supabase/server'
 
-  if(req.method !== 'POST'){
-    return res.status(405).json({ message: "Method not allowed!"})
+export async function login(formData: FormData) {
+  console.log("login function called", formData)
+  const supabase = createClient()
+  const data = {
+    email: formData.get('email') as string,
+    password: formData.get('password') as string,
   }
 
-  const { email, password } = req.body
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  })
+  const { error } = await supabase.auth.signInWithPassword(data)
 
-  res.status(200).json({ user: data.user, error })
+  if (error) {
+    redirect('/login?error=Invalid credentials')
+  }
+
   revalidatePath('/', 'layout')
   redirect('/account')
 }
+

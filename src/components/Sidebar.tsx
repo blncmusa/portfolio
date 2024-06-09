@@ -46,12 +46,12 @@ export default function Sidebar(){
     const pathname = usePathname()
 
     return (
-        <aside className="sticky text-title flex border-4 flex-col h-[40%]">
+        <aside className="sticky text-title flex flex-col h-[40%]">
             <h1 className="text-1xl font-bold py-10 px-5">Pages</h1>
             <ul className='list-none flex flex-col'>
                 {menuItems.map((item, index) => {
                     return (
-                        <li key={index} className={`w-[100%] h-[65px] flex justify-start px-10 items-center hover:bg-hover ${pathname === item.path ? 'bg-hover' : ''} cursor-pointer`}
+                        <li key={index} className={`w-[100%] h-[65px] flex justify-start px-10 items-center hover:bg-hover ${pathname === item.path ? 'bg-hover' : ''} cursor-pointer md:text-sm`}
         >
                             <a href={item.path}>
                                 {item.icon}
@@ -60,6 +60,21 @@ export default function Sidebar(){
                         </li>
                     )
                 })}
+            </ul>
+            <h1 className="text-1xl font-bold py-10 px-5">Account</h1>
+            <ul className='list-none flex flex-col'>
+                {accountItems.map((item, index) => {
+                    return (
+                        <li key={index} className={`w-[100%] h-[65px] flex justify-start px-10 items-center hover:bg-hover ${pathname === item.path ? 'bg-hover' : ''} cursor-pointer md:text-sm`}
+        >
+                            <a href={item.path}>
+                                {item.icon}
+                                <span className='px-4'>{item.name}</span>
+                            </a>
+                        </li>
+                    )
+                }
+                )}
             </ul>
         </aside>
     )

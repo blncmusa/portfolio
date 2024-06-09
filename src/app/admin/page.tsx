@@ -26,7 +26,7 @@ export default function LoginPage() {
     return (
         <>
         
-            <div className="lg:flex md:flex sm:flex h-screen w-screen justify-center items-center border-4 hidden focus:outline-none">
+            <div className="lg:flex md:flex sm:flex h-screen w-screen justify-center items-center hidden focus:outline-none">
                 <div className="min-w-[350px] bg-primary-100 min-h-[55%] rounded-md flex justify-center flex-col focus:outline-none shadow-2xl">
                     <div className="flex justify-center mb-[10px] focus:outline-none">
                         <h1 className="text-md text-white"><span className="font-extralight">Welcome Back, </span><span className="font-bold">Mustafa!</span></h1>

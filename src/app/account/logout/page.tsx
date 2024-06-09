@@ -1,7 +1,18 @@
+"use client"
+
+import { logout } from "@/pages/api/logout"
+
 export default function Logout(){
+
+    const handleLogout = async () => {
+        await logout();
+    }
+
     return (
-        <div>
-            <h1>Logout</h1>
-        </div>
+        <nav className="w-screen h-[10%] bg-primary-100 flex justify-evenly py-4">
+            <button onClick={handleLogout} className="p-2 bg-green-100 rounded-md px-4">
+                    <p>Sign Out</p>
+            </button>
+        </nav> 
     )
 }

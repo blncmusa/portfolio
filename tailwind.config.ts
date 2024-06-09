@@ -21,7 +21,8 @@ const config: Config = {
           200: "#0A1821",
         },
         paragraph: "#8e9fb9",
-        title: "#e2e8f0"
+        title: "#e2e8f0",
+        hover: "#2e374a"
       }
     },
   },

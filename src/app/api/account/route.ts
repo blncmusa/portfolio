@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { NextResponse } from "next/server";
 
 export async function PUT(request: Request){
-    const { id, text } = await request.json()
+    const { message } = await request.json()
     const supabase = createClient()
     const { data: { user } } = await supabase.auth.getUser()
 
@@ -12,7 +12,7 @@ export async function PUT(request: Request){
 
     const { error } = await supabase
         .from("text_area")
-        .update({ text })
+        .update({ text: message })
         .match({ name: "biography", user_id: user.id})
  
     if (error) {
@@ -45,7 +45,7 @@ export async function GET(){
     const { data, error } = await supabase
         .from("text_area")
         .select()
-        .eq("id", 1)
+        .eq("name", "biography")
 
     return NextResponse.json({ data, error })
 }

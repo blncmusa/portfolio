@@ -9,7 +9,7 @@ export default async function Details(){
     const { data: biography } = await supabase
         .from("text_area")
         .select()
-        .eq("id", 1)
+        .eq("name", "biography")
 
     console.log(biography)
     

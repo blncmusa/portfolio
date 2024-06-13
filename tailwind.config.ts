@@ -22,7 +22,7 @@ const config: Config = {
         },
         paragraph: "#8e9fb9",
         title: "#e2e8f0",
-        hover: "#2e374a"
+        hover: "#1d4762"
       }
     },
   },

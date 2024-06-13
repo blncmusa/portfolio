@@ -1,6 +1,6 @@
 "use client"
 
-import { logout } from "@/pages/api/logout"
+import { logout } from "@/app/api/logout"
 
 export default function Logout(){
 

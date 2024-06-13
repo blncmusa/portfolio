@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react"
-import { login } from "@/pages/api/login";
+import { login } from "@/app/api/login";
 
 export default function LoginPage() {
 

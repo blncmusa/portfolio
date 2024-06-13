@@ -1,6 +1,4 @@
 "use client"
-
-import Navbar from '@/components/Navbar'
 import Sidebar from "../../components/Sidebar"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -21,11 +19,10 @@ export default function Layout({children}: {children: React.ReactNode}){
             </div>
             <div className="flex-grow h-screen p-[20px]">
                 <div className="lg:hidden cursor-pointer">
-                    <button onClick={handleSidebar}>
+                    <button onClick={handleSidebar} className="text-white p-2 bg-hover rounded-md">
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>
-                <Navbar />
                 {children}
             </div>
         </div>

@@ -22,7 +22,8 @@ const config: Config = {
         },
         paragraph: "#8e9fb9",
         title: "#e2e8f0",
-        hover: "#1d4762"
+        hover: "#1d4762",
+        projectsHover: "#132e3e"
       }
     },
   },

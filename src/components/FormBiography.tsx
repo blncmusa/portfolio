@@ -12,7 +12,7 @@ interface Biography {
     user_id: string
 }
 
-export default function Test(data: { data: Biography}){
+export default function FormBiography(data: { data: Biography}){
 
     const text = data.data.text
     const formRef = React.useRef<HTMLFormElement>(null)
@@ -41,7 +41,7 @@ export default function Test(data: { data: Biography}){
         <div>
            <>
             <form ref={formRef}>
-                <div className='flex flex-col gap-2 border-4'>
+                <div className='flex flex-col gap-2 h-full'>
                     <textarea
                         name="text"
                         minLength={4}
@@ -50,12 +50,12 @@ export default function Test(data: { data: Biography}){
                         value={message}
                         onChange={(e) => {setMessage(e.target.value)}}
                         placeholder={text}
-                        className='resize-none lg:h-[700px]'
+                        className='resize-none lg:h-[600px] rounded-md p-2 text-black bg-gray-100 focus:outline-none'
                     />
-                    <button type="submit" className='text-white p-3 bg-hover' formAction={handleSubmit} disabled={pending}>
+                    <button type="submit" className='text-white p-3 bg-hover rounded-md' formAction={handleSubmit} disabled={pending}>
                         Submit
                     </button>
-                    {error && <p className="text-red-500">{error}</p>}
+                    {error && <p className="text-red-500 font-bold">{error}</p>}
                 </div>
             </form>
             </>

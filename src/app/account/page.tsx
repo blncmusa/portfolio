@@ -1,7 +1,6 @@
 import React from 'react'
 import { createClient } from '@/utils/supabase/server'
-import BiographyForm from "@/components/BiographyForm"
-import Test from '@/components/Test'
+import Test from '@/components/FormBiography'
 
 export default async function Account(){
 
@@ -15,8 +14,7 @@ export default async function Account(){
 
     return (
         <>
-        <div>
-            {/* <BiographyForm data={data} /> */}
+        <div className='h-[90%]'>
             <Test data={data} />
         </div>
         </>

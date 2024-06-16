@@ -7,7 +7,7 @@ export default function Titles(){
         <div className="flex flex-col gap-2">
             <h1 className="text-6xl text-title font-bold">Mustafa</h1>
             <p className="text-title text-xl">Software Engineer</p>
-            <p className="text-paragraph font-extralight">React | React Native</p>
+            <p className="text-paragraph font-extralight">Next.js | React | React Native</p>
         </div>
             <div className="lg:hidden min-w-[200px] max-w-[30%]">
             <Links />

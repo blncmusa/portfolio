@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server"
 import ProjectsTable from "@/components/ProjectsTable"
-import { Project } from "@/app/types/types"
+import { Project } from "@/types/types"
 
 export default async function ProjectManagement(){
 
@@ -9,8 +9,6 @@ export default async function ProjectManagement(){
     const { data } = await supabases
         .from("projects")
         .select()
-
-    console.log(data)
 
     return (
         <>

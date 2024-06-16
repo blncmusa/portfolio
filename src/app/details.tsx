@@ -1,6 +1,8 @@
 import Projects from "@/app/api/projects"
 import React from "react"
 import { createClient } from "@/utils/supabase/server"
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default async function Details(){
 
@@ -25,7 +27,14 @@ export default async function Details(){
                 <p>Marcus, admiratus pulchritudinem felis, statim amorem erga eam concepit. Nomen dedit ei "Stella" ob oculos scintillantes. Una cum Stella, Marcus cotidie adventuras novas experiebatur, discens de natura et affectu verae amicitiae. Stella, a puero dilecta, semper fidelis ei manebat.</p>
                 <p>Tempore praetereunte, Marcus et Stella inseparabiles facti sunt. Feles Marcum comitata est etiam per momenta difficilia. Ubi Marcus tristis erat aut laborabat, Stella ad eum veniebat et eum consolabatur. Sic Marcus, per amorem et fidem Stellae, intellexit virtutem patientiae et perseverantiae in vita.</p>
             </div>
+            <h1 className="text-white lg:hidden uppercase my-10">Projects</h1>
             <Projects />
+            <a href="/projects">
+                <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">
+                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View Full Project archive Archive</p>
+                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer"/>
+                </div>
+            </a>
         </div>
     )
 }

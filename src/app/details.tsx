@@ -3,6 +3,7 @@ import React from "react"
 import { createClient } from "@/utils/supabase/server"
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import RecentActivities from "@/components/activities/RecentActivities"
 
 export default async function Details(){
 
@@ -31,7 +32,14 @@ export default async function Details(){
             <Projects />
             <a href="/projects">
                 <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">
-                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View Full Project archive Archive</p>
+                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View Full Project Archive</p>
+                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer"/>
+                </div>
+            </a>
+            <RecentActivities />
+            <a href="/activity">
+                <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">
+                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View All Recent Activities</p>
                     <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer"/>
                 </div>
             </a>

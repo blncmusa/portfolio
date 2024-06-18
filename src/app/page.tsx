@@ -1,5 +1,3 @@
-import Links from "@/components/links"
-import Link from "next/link"
 import Details from "./details"
 import Titles from "../components/titles"
 

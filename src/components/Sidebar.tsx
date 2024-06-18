@@ -46,7 +46,7 @@ export default function Sidebar(){
     const pathname = usePathname()
 
     return (
-        <aside className="sticky text-title flex flex-col h-[40%]">
+        <aside className="fixed text-title flex flex-col h-screen w-[250px]">
             <h1 className="text-1xl font-bold py-10 px-5">Pages</h1>
             <ul className='list-none flex flex-col justify-center items-center gap-2'>
                 {menuItems.map((item, index) => {

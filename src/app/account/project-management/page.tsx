@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server"
-import ProjectsTable from "@/components/ProjectsTable"
 import { Project } from "@/types/types"
+import ManageProjectsTable from "@/components/projects/ManageProjectTable"
+import AddProjects from "@/components/projects/AddProjects"
 
 export default async function ProjectManagement(){
 
@@ -12,8 +13,10 @@ export default async function ProjectManagement(){
 
     return (
         <>
-            <h1>Project Management</h1>
-            <ProjectsTable projects={data as Project[]}/>
+            <div className="w-full projects-container">
+                <ManageProjectsTable projects={data as Project[]}/>
+                <AddProjects />
+            </div>
         </>
     )
 }

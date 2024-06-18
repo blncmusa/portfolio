@@ -50,7 +50,7 @@ export default function FormBiography(data: { data: Biography}){
                         value={message}
                         onChange={(e) => {setMessage(e.target.value)}}
                         placeholder={text}
-                        className='resize-none lg:h-[600px] rounded-md p-2 text-black bg-gray-100 focus:outline-none'
+                        className='resize-none lg:h-[600px] md:h-[600px] rounded-md p-2 text-black bg-gray-100 focus:outline-none'
                     />
                     <button type="submit" className='text-white p-3 bg-hover rounded-md' formAction={handleSubmit} disabled={pending}>
                         Submit

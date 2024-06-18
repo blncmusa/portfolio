@@ -14,10 +14,10 @@ export default function Layout({children}: {children: React.ReactNode}){
 
     return (
         <div className='flex'>
-            <div className={`lg:block flex-grow-none basis-1/5 md:basis-[25%] min-w-[250px] bg-primary-100 h-screen ${ sidebar ? "" : "hidden"}`}>
+            <div className={`lg:block flex-grow-none basis-1/5 md:basis-[25%] min-w-[250px] bg-primary-100 min-h-screen fixed top-0 ${ sidebar ? "" : "hidden"}`}>
                 <Sidebar /> 
             </div>
-            <div className="flex-grow h-screen p-[20px]">
+            <div className="flex-grow h-screen p-[20px] lg:ml-[250px]">
                 <div className="lg:hidden cursor-pointer">
                     <button onClick={handleSidebar} className="text-white p-2 bg-hover rounded-md">
                         <FontAwesomeIcon icon={faBars} />

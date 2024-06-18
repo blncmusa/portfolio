@@ -25,3 +25,15 @@
 .social-media {
   @apply cursor-pointer hover:text-title transition ease-in-out duration-150 hover:scale-110 hover:-translate-y-1;
 }
+
+.project-input {
+  @apply rounded p-2 
+}
+
+.input-container { 
+  @apply flex flex-col w-full
+}
+
+.input-container-title {
+  @apply text-white font-light mb-1
+}

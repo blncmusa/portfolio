@@ -16,9 +16,9 @@ export default function ProjectCard({ project }: { project: Project }){
                             <FontAwesomeIcon icon={faArrowRightLong} className='group-hover:translate-x-2 group-hover:transition ease-in-out hover:ease-in-out duration-300'/>
                         </div>
                         <p className="font-light text-[13px] leading-[20px]">{project.description}</p>
-                        <div className="">
+                        <div className="capitalize">
                             {project.tags?.map((tag, index) => (
-                                <span key={index} className="text-white bg-hover mr-[6px] rounded-md p-[5px] px-[7px] text-[12px] mt-[10px]">{tag}</span>
+                                <span key={index} className="text-white bg-hover mr-[6px] rounded-md p-[5px] px-[7px] text-[12px] mt-[10px] capitalize">{tag}</span>
                             ))}
                         </div>
                     </div>

@@ -28,7 +28,7 @@ export default async function Details(){
                 <p>Marcus, admiratus pulchritudinem felis, statim amorem erga eam concepit. Nomen dedit ei "Stella" ob oculos scintillantes. Una cum Stella, Marcus cotidie adventuras novas experiebatur, discens de natura et affectu verae amicitiae. Stella, a puero dilecta, semper fidelis ei manebat.</p>
                 <p>Tempore praetereunte, Marcus et Stella inseparabiles facti sunt. Feles Marcum comitata est etiam per momenta difficilia. Ubi Marcus tristis erat aut laborabat, Stella ad eum veniebat et eum consolabatur. Sic Marcus, per amorem et fidem Stellae, intellexit virtutem patientiae et perseverantiae in vita.</p>
             </div>
-            <h1 className="text-white lg:hidden uppercase my-10">Projects</h1>
+            <h1 className="text-white text-xl mb-5 font-bold">Projects</h1>
             <Projects />
             <a href="/projects">
                 <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">

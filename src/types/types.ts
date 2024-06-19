@@ -8,3 +8,17 @@ export interface Project {
     is_featured?: boolean,
     link: string
 }
+
+export interface Activity { 
+    id: number,
+    crreated_at: string,
+    name: string,
+    description?: string,
+    category: string,
+    tags: string[],
+    date: string,
+    link?: string,
+    image?: string,
+    status?: string,
+    tech: string[]
+}

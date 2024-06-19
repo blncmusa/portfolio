@@ -3,11 +3,6 @@ import React from 'react'
 
 export default function ActivityCard({ activity }: { activity: Activity}){
 
-   function getDayName(dayString: string){
-    const data = new Date(dayString)
-    return new Intl.DateTimeFormat('en-US', { weekday: 'short'}).format(data)
-   }
-
    function getMonthName(monthString: string){
     const data = new Date(monthString)
     return new Intl.DateTimeFormat('en-US', { month: 'short'}).format(data)
@@ -23,7 +18,6 @@ export default function ActivityCard({ activity }: { activity: Activity}){
     return new Intl.DateTimeFormat('en-US', { year: '2-digit'}).format(data)
    }
 
-   const dayName = getDayName(activity.date)
    const monthName = getMonthName(activity.date)
    const dateDigit = getDateDigit(activity.date)
    const yearInTwoDigits = getYearInTwoDigits(activity.date)

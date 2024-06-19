@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Project } from '@/types/types'
 
 export default function ProjectCard({ project }: { project: Project }){
+
+    function capitalizeWords(str: string) {
+        return str.replace(/\b\w/g, char => char.toUpperCase());
+    }
+
     return (
         <>  
             <a href={project.link} target="_blank" className="group">
@@ -18,7 +23,7 @@ export default function ProjectCard({ project }: { project: Project }){
                         <p className="font-light text-[13px] leading-[20px]">{project.description}</p>
                         <div className="capitalize">
                             {project.tags?.map((tag, index) => (
-                                <span key={index} className="text-white bg-hover mr-[6px] rounded-md p-[5px] px-[7px] text-[12px] mt-[10px] capitalize">{tag}</span>
+                                <span key={index} className="text-white bg-hover mr-[6px] rounded-md p-[5px] px-[7px] text-[12px] mt-[10px] capitalize">{capitalizeWords(tag)}</span>
                             ))}
                         </div>
                     </div>

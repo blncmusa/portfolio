@@ -34,16 +34,16 @@ export default async function Details(){
             </div>
             <Projects />
             <a href="/projects">
-                <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">
-                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View Full Project Archive</p>
-                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer"/>
+                <div className="flex gap-2 items-center text-sm font-bold transition ease-in-out hover:gap-4 delay-150 group">
+                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline text-gray-700 group-hover:text-white">View Full Project Archive</p>
+                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer text-gray-700 group-hover:text-white "/>
                 </div>
             </a>
             <RecentActivities />
             <a href="/activity">
-                <div className="flex gap-2 items-center text-sm font-bold text-title transition ease-in-out hover:gap-4 delay-150 group">
-                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline">View All Recent Activities</p>
-                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer"/>
+                <div className="flex gap-2 items-center text-sm font-bold transition ease-in-out hover:gap-4 delay-150 group">
+                    <p className="hover:transition duration-300 ease-in-out hover:underline cursor-pointer group-hover:underline text-gray-700 group-hover:text-white">View All Recent Activities</p>
+                    <FontAwesomeIcon icon={faArrowRightLong} className="group-hover:translate-x-[5px] group-hover:transition ease-in-out hover:ease-in-out duration-300 cursor-pointer text-gray-700 group-hover:text-white"/>
                 </div>
             </a>
         </div>

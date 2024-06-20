@@ -10,6 +10,7 @@ export default async function Projects(){
     const { data } = await supabases
         .from("projects")
         .select()
+
     return (
         <>
             <div className="w-screen flex justify-center mt-10 md:px-5 sm:mx-5 max-sm:p-5">

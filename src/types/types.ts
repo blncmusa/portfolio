@@ -9,7 +9,7 @@ export interface Project {
     link: string
 }
 
-export interface Activity { 
+export interface ActivityData { 
     id: number,
     crreated_at: string,
     name: string,

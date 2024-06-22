@@ -9,8 +9,6 @@ export default async function Activity(){
     .from("activities")
     .select()
 
-  console.log(data)
-
   return (
     <div>
       <ActivitiesTable activities={data}/>

@@ -11,12 +11,8 @@ export default function LoginPage() {
     const [error, setError] = React.useState('');
 
     const handleLogin = () => {
-        setTimeout(() => {
-            console.log("waiting...")
-        }, 2000)
         if(email && password) {
             const formData = new FormData();
-            console.log(email, password, "email and password sent")
             formData.append('email', email);
             formData.append('password', password);
             login(formData);

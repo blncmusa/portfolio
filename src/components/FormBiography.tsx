@@ -25,7 +25,7 @@ export default function FormBiography(data: { data: Biography}){
             setError("You can't submit the same text!")
             return
         }
-        console.log(message)
+        
         setError("")
         const response = await fetch("/api/account", {
             method: "PUT",

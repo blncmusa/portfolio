@@ -9,6 +9,8 @@ export default async function Projects(){
     const { data } = await supabase
         .from("projects")
         .select()
+        .eq("is_featured", true)
+        .limit(3)
 
     return (
         <div className="">

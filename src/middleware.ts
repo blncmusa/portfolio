@@ -1,15 +1,8 @@
 import { type NextRequest } from 'next/server'
-import { updateSession } from './utils/supabase/middleware'
+import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
-  try {
-    const response = await updateSession(request)
-    console.log('Session updated')
-    return response
-  } catch (error) {
-    console.error('Failed to update session', error)
-    return new Response('Failed to update session', { status: 500 })
-  }
+  return await updateSession(request)
 }
 
 export const config = {

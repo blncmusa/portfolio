@@ -1,9 +1,8 @@
 "use client"
 
-import { sep } from "path"
 import React from "react"
 
-export default function AddProjects(){
+export default function AddActivity(){
 
     const [name, setName] = React.useState("")
     const [description, setDescription] = React.useState("")
@@ -11,6 +10,11 @@ export default function AddProjects(){
     const [link, setLink] = React.useState("")
     const [tags, setTags] = React.useState("")
     const [separatedTags, setSeparatedTags] = React.useState<string[]>([]) 
+    const [category, setCategory] = React.useState("")
+    const [date, setDate] = React.useState("")
+    const [status, setStatus] = React.useState("")
+    const [tech, setTech] = React.useState("")
+    const [separatedTech, setSeperatedTech] = React.useState<string[]>([])
     const [error, setError] = React.useState("")
 
     const seperateTags = (tags: string) => {
@@ -18,24 +22,32 @@ export default function AddProjects(){
         setSeparatedTags(separated)
     }
 
+    const separateTech = (tech: string) => {
+        const separated = tech.split(",").map(tag => tag.trim())
+        setSeperatedTech(separated)
+    }
+
     React.useEffect(() => {
         if(tags){
             seperateTags(tags)
         }
-    }, [tags])
+        if(tech){
+            separateTech(tech)
+        }
+    }, [tags, tech])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault() 
-        if(!name || !description || !image || !link || !tags){
+        if(!name || !description || !link || !tech || !tags || !category || !date || !status){
             setError("Please fill out all fields")
             return
         }
-        const response = await fetch("/api/account/project-management", {
+        const response = await fetch("/api/account/recent-activity", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name, description, image, link, tags: separatedTags })
+            body: JSON.stringify({ name, description, category, status, image, link, tags: separatedTags, tech: separatedTech, date})
         })
         if(response.ok){
             setName("")
@@ -44,6 +56,10 @@ export default function AddProjects(){
             setLink("")
             setTags("")
             setError("")
+            setCategory("")
+            setDate("")
+            setStatus("")
+            setTech("")
         }
     }
 
@@ -81,6 +97,61 @@ export default function AddProjects(){
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="Description"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input-container-title">Category</p>
+                        <select
+                            name="category"
+                            className="project-input"
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                        >
+                            <option value="">Select a category</option>
+                            <option value="Open Source Contribution">Open Source Contribution</option>
+                            <option value="Project Development">Project Development</option>
+                            <option value="Technical Writing">Technical Writing</option>
+                            <option value="Workshops & Conferences">Workshops & Conferences</option>
+                            <option value="Course Completion">Course Completion</option>
+                            <option value="Community Involvement">Community Involvement</option>
+                            <option value="Achievements & Awards">Achievements & Awards</option>
+                            <option value="Collaborations">Collaborations</option>
+                            <option value="Side Projects">Side Projects</option>
+                            <option value="Research & Publications">Research & Publications</option>
+                            <option value="Learning & Reading">Learning & Reading</option>
+                        </select>
+                    </div>
+                    <div className="input-container">
+                        <p className="input-container-title">Date</p>
+                        <input
+                            type="date"
+                            name="date"
+                            className="project-input"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                            placeholder="Date"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input-container-title">Status</p>
+                        <input
+                            type="text"
+                            name="status"
+                            className="project-input"
+                            value={status}
+                            onChange={(e) => setStatus(e.target.value)}
+                            placeholder="Status"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input-container-title">Tech</p>
+                        <input
+                            type="text"
+                            name="tech"
+                            className="project-input"
+                            value={tech}
+                            onChange={(e) => setTech(e.target.value)}
+                            placeholder="Tech"
                         />
                     </div>
                     <div className="input-container">

@@ -21,7 +21,7 @@ type CourseListProps = {
 
 export default function CourseList({ courses, modules }: CourseListProps) {
   return (
-    <ul className="text-gray-300">
+    <ul className="text-gray-300 mt-10 font-thin">
       {courses.map((course) => (
         <CourseWithModules key={course.id} course={course} modules={modules} />
       ))}

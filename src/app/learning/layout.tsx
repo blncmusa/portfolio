@@ -1,14 +1,10 @@
 // app/learning/layout.tsx
 import { createClient } from "@/utils/supabase/server";
-import Link from "next/link";
+import Tabs from "@/components/learning/Tabs";
 
 export const metadata = {
   title: "Learning",
 };
-
-function generateSlug(name: string) {
-  return name.toLowerCase().replace(/\s+/g, "-");
-}
 
 export default async function LearningLayout({
   children,
@@ -26,24 +22,15 @@ export default async function LearningLayout({
   }
 
   return (
-    <div className="learning-layout">
-      <h1 className="text-white text-2xl mb-4">Learning</h1>
+    <div className="flex h-screen">
+        <div className="learning-layout mt-10 mx-10 border h-[90%] overflow-hidden w-screen">
 
-      {/* Tabs */}
-      <div className="tabs-header flex space-x-4 border-b border-gray-600 mb-4">
-        {topics?.map((topic) => (
-          <Link
-            key={topic.id}
-            href={`/learning/${generateSlug(topic.name)}`}
-            className="tab-button p-2 text-gray-400 hover:text-white"
-          >
-            {topic.name}
-          </Link>
-        ))}
-      </div>
+        {/* Use the Tabs client component */}
+        <Tabs topics={topics} />
 
-      {/* Render children (specific topic content) */}
-      <div className="tab-content">{children}</div>
+        {/* Render children (specific topic content) */}
+        <div className="tab-content">{children}</div>
+        </div>
     </div>
   );
 }

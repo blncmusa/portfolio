@@ -1,11 +1,19 @@
 // app/learning/[slug]/page.tsx
 import { createClient } from "@/utils/supabase/server";
-import CourseList from "@/components/learning/CourseList"
+import CourseList from "@/components/learning/CourseList";
+import Books from "@/components/learning/Books";
 
 type TopicPageProps = {
   params: {
     slug: string;
   };
+};
+
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  image_url: string;
 };
 
 // Helper function to generate slug (same as in layout)
@@ -18,7 +26,9 @@ export default async function TopicPage({ params }: TopicPageProps) {
   const { slug } = params;
 
   // Fetch all topics and find the one matching the slug
-  const { data: topics, error: topicsError } = await supabase.from("topics").select("id, name");
+  const { data: topics, error: topicsError } = await supabase
+    .from("topics")
+    .select("id, name, has_books");
 
   if (topicsError || !topics) {
     console.error("Error fetching topics:", topicsError);
@@ -53,11 +63,37 @@ export default async function TopicPage({ params }: TopicPageProps) {
     return <div>Error loading modules</div>;
   }
 
+  // Fetch books if `has_books` is true
+  let books: Book[] = [];
+  if (topic.has_books) {
+    const { data: booksData, error: booksError } = await supabase
+      .from("books")
+      .select("id, title, author, image_url")
+      .eq("topic_id", topic.id);
+
+    if (booksError) {
+      console.error("Error fetching books:", booksError);
+      return <div>Error loading books</div>;
+    }
+
+    books = booksData || [];
+  }
+
   return (
-    <div>
-      <h2 className="text-white text-xl mb-2">{topic.name} Courses</h2>
-      {/* Pass all data to the client component */}
-      <CourseList courses={courses} modules={modules} />
+    <div className="flex justify-between">
+      {/* Left Side: Courses and Modules */}
+      <div className="ml-10 text-[30px]">
+        <CourseList courses={courses} modules={modules} />
+      </div>
+
+      {/* Right Side: Books Section (if `has_books` is true) */}
+      <div className="w-1/4">
+        {topic.has_books && (
+          <div className="font-thin">
+            <Books books={books} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

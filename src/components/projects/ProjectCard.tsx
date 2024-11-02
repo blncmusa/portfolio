@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: Project }){
     return (
         <>  
             <a href={project.link} target="_blank" className="group">
-                <div className="flex gap-5 mb-[20px] justify-start hover:bg-projectsHover rounded-lg py-4 px-4 items-start transition ease-in-out duration-150 hover:scale-110 cursor-pointer">
+                <div className="flex gap-5 mb-[20px] justify-start hover:bg-projectsHover rounded-lg py-4 px-4 items-start transition ease-in-out duration-150 hover:scale-104 cursor-pointer">
                     <div className="w-1/4">
                         <img src={project.image} alt={project.name} className="object-cover w-full rounded-lg max-h-[100px]" />
                     </div>

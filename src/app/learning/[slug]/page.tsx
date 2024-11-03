@@ -16,6 +16,12 @@ type Book = {
   image_url: string;
 };
 
+type Lesson = {
+  id: string;
+  name: string;
+  module_id: string;
+};
+
 // Helper function to generate slug (same as in layout)
 function generateSlug(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
@@ -63,6 +69,16 @@ export default async function TopicPage({ params }: TopicPageProps) {
     return <div>Error loading modules</div>;
   }
 
+  // Fetch lessons for all modules within this topic
+  const { data: lessons, error: lessonsError } = await supabase
+    .from("lessons")
+    .select("id, name, module_id");
+
+  if (lessonsError) {
+    console.error("Error fetching lessons:", lessonsError);
+    return <div>Error loading lessons</div>;
+  }
+
   // Fetch books if `has_books` is true
   let books: Book[] = [];
   if (topic.has_books) {
@@ -83,7 +99,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
     <div className="flex justify-between">
       {/* Left Side: Courses and Modules */}
       <div className="ml-10 text-[30px]">
-        <CourseList courses={courses} modules={modules} />
+        <CourseList courses={courses} modules={modules} lessons={lessons} />
       </div>
 
       {/* Right Side: Books Section (if `has_books` is true) */}

@@ -98,7 +98,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
   return (
     <div className="flex justify-between">
       {/* Left Side: Courses and Modules */}
-      <div className="ml-10 text-[30px]">
+      <div className="ml-10 text-[30px] ">
         <CourseList courses={courses} modules={modules} lessons={lessons} />
       </div>
 

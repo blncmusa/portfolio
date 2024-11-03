@@ -23,7 +23,7 @@ export default async function LearningLayout({
 
   return (
     <div className="flex h-screen">
-        <div className="learning-layout mt-10 mx-10 border h-[90%] overflow-hidden w-screen">
+        <div className="learning-layout mt-10 mx-10 border border-[#4b5563] h-[90%] overflow-hidden w-screen">
 
         {/* Use the Tabs client component */}
         <Tabs topics={topics} />

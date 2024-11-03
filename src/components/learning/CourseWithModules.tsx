@@ -37,12 +37,12 @@ export default function CourseWithModules({ course, modules, lessons }: CourseWi
   return (
     <li className="mb-4">
       <div
-        className="cursor-pointer text-white font-semibold"
+        className="cursor-pointer text-white font-extralight"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {course.name}
         <span className="ml-2">
-          {isExpanded ? <FontAwesomeIcon icon={faMinus} /> : <FontAwesomeIcon icon={faCaretDown} />}
+          {isExpanded ? "—" : <FontAwesomeIcon icon={faCaretDown} />}
         </span>
       </div>
       {isExpanded && (

@@ -9,24 +9,35 @@ const menuItems = [
     {
         name: "Dashboard",
         path: "/account",
-        icon:  <FontAwesomeIcon icon={faHouse}/>
+        icon: <FontAwesomeIcon icon={faHouse}/>
     },
     {
         name: "Projects",
         path: "/account/project-management",
-        icon:  <FontAwesomeIcon icon={faBarsProgress}/>
+        icon: <FontAwesomeIcon icon={faBarsProgress}/>
     },
     {
         name: "Activity",
         path: "/account/recent-activity",
-        icon:  <FontAwesomeIcon icon={faLaptopFile}/>
+        icon: <FontAwesomeIcon icon={faLaptopFile}/>
     },
     {
         name: "Blog",
         path: "/account/blog",
-        icon:  <FontAwesomeIcon icon={faNewspaper}/>
+        icon: <FontAwesomeIcon icon={faNewspaper}/>
+    },
+    {
+        name: "Courses",
+        path: "/account/courses",
+        icon: <FontAwesomeIcon icon={faBarsProgress}/> // You can change to a relevant icon if you have one
+    },
+    {
+        name: "Books",
+        path: "/account/books",
+        icon: <FontAwesomeIcon icon={faNewspaper}/> // You can change to a relevant icon if you have one
     }
-]
+];
+
 
 const accountItems = [
     {

@@ -13,7 +13,13 @@ type Book = {
   id: string;
   title: string;
   author: string;
-  image_url: string;
+  image_url?: string;
+  journal_name?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  publisher?: string;
+  published_date?: string;
 };
 
 type Lesson = {
@@ -84,8 +90,9 @@ export default async function TopicPage({ params }: TopicPageProps) {
   if (topic.has_books) {
     const { data: booksData, error: booksError } = await supabase
       .from("books")
-      .select("id, title, author, image_url")
-      .eq("topic_id", topic.id);
+      .select("id, title, author, image_url, journal_name, volume, issue, pages, publisher, published_date")
+      .eq("topic_id", topic.id)
+      .order("created_at", { ascending: true });
 
     if (booksError) {
       console.error("Error fetching books:", booksError);

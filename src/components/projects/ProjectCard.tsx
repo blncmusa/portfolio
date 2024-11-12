@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: { project: Project }){
             <a href={project.link} target="_blank" className="group">
                 <div className="flex gap-5 mb-[20px] justify-start hover:bg-projectsHover rounded-lg py-4 px-4 items-start transition ease-in-out duration-150 hover:scale-104 cursor-pointer">
                     <div className="w-1/4">
-                        <img src={project.image} alt={project.name} className="object-cover w-full rounded-lg max-h-[100px]" />
+                        <img src={project.image} alt={project.name} className="object-cover w-full rounded-lg max-h-[140px]" />
                     </div>
                     <div className="flex flex-col w-3/4 text-paragraph gap-2 justify-between h-[100%]">
                         <div className='flex gap-2 items-center'>

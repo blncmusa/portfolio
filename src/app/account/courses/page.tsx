@@ -1,6 +1,7 @@
 // app/account/course-management/page.tsx
 import CourseForm from "@/components/courses/CoursesForm";
 import TopicForm from "@/components/courses/TopicsForm";
+import ModulesForm from "@/components/courses/ModulesForm"
 
 export default function CourseManagement() {
     return (
@@ -8,6 +9,7 @@ export default function CourseManagement() {
             {/* <h1 className="text-2xl font-bold mb-4">Course Management</h1> */}
             <TopicForm/>
             <CourseForm />
+            <ModulesForm/>
             {/* Add other forms or list of courses here */}
         </div>
     );
